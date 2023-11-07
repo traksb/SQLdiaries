@@ -7,4 +7,4 @@ WITH birth_year_demog AS
 SELECT sub_id as "Sub ID",
        birth_year as "Year of Birth"
 FROM birth_year_demog 
-WHERE birth_year BETWEEN ({{First Year}})::varchar AND ({{Second Year}})::varchar
+WHERE (birth_year < ({{First Year}})::varchar OR birth_year > ({{Second Year}})::varchar)
